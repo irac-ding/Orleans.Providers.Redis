@@ -10,7 +10,7 @@ using Orleans.Storage;
 
 namespace Orleans.Hosting
 {
-    public static class RedisStorageBuilderExtensions
+    public static class RedisGrainStorageBuilderExtensions
     {
         /// <summary>
         /// Configure silo to use redis storage as the default grain storage.
