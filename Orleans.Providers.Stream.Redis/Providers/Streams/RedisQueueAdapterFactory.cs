@@ -1,15 +1,14 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
+using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Orleans.Configuration;
 using Orleans.Configuration.Overrides;
+using Orleans.Providers.Common.Redis;
 using Orleans.Providers.Streams.Common;
+using Orleans.Runtime;
 using Orleans.Streams;
 using Serilog;
-using StackExchange.Redis;
-using System;
-using System.Threading.Tasks;
-using Orleans.Runtime;
 
 namespace Orleans.Providers.Streams.Redis
 {
@@ -75,7 +74,7 @@ namespace Orleans.Providers.Streams.Redis
             var adapter = new RedisQueueAdapter(
                 _options,
                 _connectionMultiplexerFactory,
-                _dataAdapter, 
+                _dataAdapter,
                 _streamQueueMapper,
                 _logger,
                 _clusterOptions.ServiceId,

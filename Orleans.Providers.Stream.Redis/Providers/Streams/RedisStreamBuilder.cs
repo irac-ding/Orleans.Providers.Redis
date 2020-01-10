@@ -1,12 +1,12 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Orleans.ApplicationParts;
 using Orleans.Configuration;
 using Orleans.Hosting;
-using Orleans.Streams;
-using System;
+using Orleans.Providers.Common.Redis;
 using Orleans.Providers.Streams.Redis;
-using Orleans.ApplicationParts;
+using Orleans.Streams;
 
 namespace Orleans.Streaming
 {
@@ -18,7 +18,7 @@ namespace Orleans.Streaming
         {
             configureAppPartsDelegate?.Invoke(parts =>
             {
-               parts.AddFrameworkPart(typeof(RedisQueueAdapterFactory).Assembly);
+                parts.AddFrameworkPart(typeof(RedisQueueAdapterFactory).Assembly);
             });
             configureDelegate?.Invoke(services =>
             {
@@ -30,7 +30,7 @@ namespace Orleans.Streaming
                 services.AddTransient<IConfigurationValidator>(sp => new RedisStreamOptionsValidator(sp.GetOptionsByName<RedisStreamOptions>(name), name));
                 services.ConfigureNamedOptionForLogging<SimpleQueueCacheOptions>(name);
                 services.ConfigureNamedOptionForLogging<HashRingStreamQueueMapperOptions>(name);
-          });
+            });
             this.ConfigureStreamPubSub(StreamPubSubType.ExplicitGrainBasedAndImplicit);
         }
 

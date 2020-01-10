@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Orleans.Providers.Reminder.Redis
+﻿namespace Orleans.Providers.Reminder.Redis
 {
     public class Class1
     {

@@ -1,13 +1,13 @@
-﻿using Orleans.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Orleans.Configuration;
 using Orleans.Providers.Common.Redis;
 using Orleans.Streaming.Redis.Storage;
 using Orleans.Streams;
 using Serilog;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Orleans.Providers.Streams.Redis
 {

@@ -1,10 +1,10 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 using Orleans;
 using Orleans.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Orleans.Hosting;
-using StackExchange.Redis;
 using Orleans.Messaging;
+using StackExchange.Redis;
 
 namespace Orleans.Providers.Clustering.Redis
 {

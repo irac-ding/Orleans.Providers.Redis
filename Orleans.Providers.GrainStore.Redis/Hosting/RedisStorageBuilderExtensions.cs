@@ -1,15 +1,11 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Orleans.Configuration;
-using Orleans.Hosting;
 using Orleans.Providers;
+using Orleans.Providers.Common.Redis;
 using Orleans.Runtime;
-using Orleans.Serialization;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Orleans.Storage;
 
 namespace Orleans.Hosting

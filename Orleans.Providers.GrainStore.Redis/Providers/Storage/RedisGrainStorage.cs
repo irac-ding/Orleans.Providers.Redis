@@ -1,19 +1,19 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Orleans.Configuration;
-using Orleans.Runtime;
+using Orleans.Providers.Common.Redis;
 using Orleans.Providers.GrainStore.Redis.Extensions;
 using Orleans.Providers.GrainStore.Redis.Helpers;
+using Orleans.Runtime;
 using Serilog;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 
 namespace Orleans.Storage
 {
@@ -139,7 +139,8 @@ namespace Orleans.Storage
             var storedETag = GenerateETag(storedDocument, typeof(T));
             if (storedETag != currentETag)
             {
-                if (_options.ThrowExceptionOnInconsistentETag) {
+                if (_options.ThrowExceptionOnInconsistentETag)
+                {
                     // Etags don't match! Inconsistent state
                     throw new InconsistentStateException(
                         $"Inconsistent state detected while performing write operations for type:{stateType.Name}.", storedETag, currentETag);

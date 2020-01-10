@@ -1,5 +1,3 @@
-using Newtonsoft.Json;
-
 namespace Orleans.Providers.Clustering.Redis
 {
     internal class VersionedEntry

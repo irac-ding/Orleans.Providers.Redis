@@ -1,6 +1,6 @@
 ﻿using System;
-using Newtonsoft.Json;
 using System.Net;
+using Newtonsoft.Json;
 using Orleans.Runtime;
 
 namespace Orleans.Providers.Clustering.Redis

@@ -1,14 +1,12 @@
 using System;
-using System.Threading.Tasks;
-using Orleans.Runtime;
-using StackExchange.Redis;
-using Orleans.Configuration;
-using Newtonsoft.Json;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System.Runtime.CompilerServices;
-[assembly: InternalsVisibleTo("Orleans.Clustering.Redis.Test")]
+using Newtonsoft.Json;
+using Orleans.Configuration;
+using Orleans.Runtime;
+using StackExchange.Redis;
 
 namespace Orleans.Providers.Clustering.Redis
 {

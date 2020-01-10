@@ -1,6 +1,6 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
+using Orleans.Providers.Common.Redis;
 using StackExchange.Redis;
-using System;
 
 namespace Orleans.Providers.GrainStore.Redis.Extensions
 {

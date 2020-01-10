@@ -1,6 +1,6 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
+using Orleans.Providers.Common.Redis;
 using Orleans.Runtime;
-using System;
 
 namespace Orleans.Configuration
 {
@@ -17,7 +17,7 @@ namespace Orleans.Configuration
         /// </summary>
         public int QueueCacheSize { get; set; } = 1000;
 
-        public PersistenceLifetime PersistenceLifetime { get;set; } = DEFAULT_PERSISTENCE_LIFETIME;
+        public PersistenceLifetime PersistenceLifetime { get; set; } = DEFAULT_PERSISTENCE_LIFETIME;
 
         /// <summary>
         /// Dictates how stream pubsub channels are named. In nearly all normal situations this

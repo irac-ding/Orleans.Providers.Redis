@@ -1,6 +1,6 @@
-﻿using Orleans.Serialization;
-using System;
+﻿using System;
 using System.Reflection;
+using Orleans.Serialization;
 
 namespace Orleans.Providers.Common.Redis
 {

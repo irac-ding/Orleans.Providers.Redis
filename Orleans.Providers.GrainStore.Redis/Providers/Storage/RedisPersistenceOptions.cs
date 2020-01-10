@@ -1,6 +1,6 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
+using Orleans.Providers.Common.Redis;
 using Orleans.Runtime;
-using System;
 
 namespace Orleans.Configuration
 {
@@ -12,7 +12,7 @@ namespace Orleans.Configuration
         public int InitStage { get; set; } = DEFAULT_INIT_STAGE;
         public const int DEFAULT_INIT_STAGE = ServiceLifecycleStage.ApplicationServices;
 
-        public PersistenceLifetime PersistenceLifetime { get;set; } = DEFAULT_PERSISTENCE_LIFETIME;
+        public PersistenceLifetime PersistenceLifetime { get; set; } = DEFAULT_PERSISTENCE_LIFETIME;
         public const PersistenceLifetime DEFAULT_PERSISTENCE_LIFETIME = PersistenceLifetime.ServiceLifetime;
 
         public bool ThrowExceptionOnInconsistentETag { get; set; } = true;

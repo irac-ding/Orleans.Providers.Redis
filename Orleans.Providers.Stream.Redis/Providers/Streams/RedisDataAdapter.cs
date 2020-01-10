@@ -1,12 +1,11 @@
-﻿using Orleans.Providers.Common.Redis;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Orleans.Providers.Common.Redis;
 using Orleans.Providers.Streams.Common;
 using Orleans.Serialization;
 using Orleans.Streams;
 using StackExchange.Redis;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Orleans.Providers.Streams.Redis
 {

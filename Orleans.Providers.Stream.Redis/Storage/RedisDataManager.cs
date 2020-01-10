@@ -1,16 +1,14 @@
-﻿using StackExchange.Redis;
-using Serilog;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Linq;
-using Orleans.Providers.Streams.Redis;
-using Orleans.Configuration;
-using Serilog.Core;
-using Orleans.Providers.Common.Redis;
+using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Threading.Tasks;
+using Orleans.Configuration;
+using Orleans.Providers.Common.Redis;
+using Serilog;
+using StackExchange.Redis;
 
 namespace Orleans.Streaming.Redis.Storage
 {
@@ -142,7 +140,7 @@ namespace Orleans.Streaming.Redis.Storage
                 }
 
                 var items = new List<RedisValue>();
-                while(items.Count < count && _queue.TryDequeue(out var item))
+                while (items.Count < count && _queue.TryDequeue(out var item))
                 {
                     items.Add(item);
                 }
@@ -253,7 +251,7 @@ namespace Orleans.Streaming.Redis.Storage
         {
             if (!(queueName.Length >= MINIMUM_KEY_LENGTH && queueName.Length <= MAXIMUM_KEY_LENGTH))
             {
-                
+
                 throw new ArgumentException("A queue name must be from {MINIMUM_KEY_LENGTH} through {MAXIMUM_KEY_LENGTH} characters long, while your queueName length is {queueName.Length}, queueName is {queueName}.", queueName);
             }
         }
