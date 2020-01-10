@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Orleans.Core" Version="3.0.2" />
+    <PackageReference Include="Microsoft.Orleans.Server" Version="3.0.2" />
+    <PackageReference Include="Serilog" Version="2.9.0" />
+    <PackageReference Include="StackExchange.Redis" Version="2.0.601" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Orleans.Providers.Common.Redis\Orleans.Providers.Common.Redis.csproj" />
+  </ItemGroup>
+</Project>
