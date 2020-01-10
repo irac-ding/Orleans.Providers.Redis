@@ -11,7 +11,7 @@ using StackExchange.Redis;
 
 namespace Orleans.Providers.Streams.Redis
 {
-    class RedisQueueAdapterReceiver : IQueueAdapterReceiver
+    internal class RedisQueueAdapterReceiver : IQueueAdapterReceiver
     {
         private IRedisDataManager _queue;
         private long _lastReadMessage;
@@ -112,7 +112,7 @@ namespace Orleans.Providers.Streams.Redis
         {
             try
             {
-                var queueRef = _queue; // store direct ref, in case we are somehow asked to shutdown while we are receiving.    
+                var queueRef = _queue; // store direct ref, in case we are somehow asked to shutdown while we are receiving.
                 if (queueRef == null) return new List<IBatchContainer>();
 
                 int count = maxCount < 0 || maxCount == QueueAdapterConstants.UNLIMITED_GET_QUEUE_MSG ? RedisDataManager.UnlimitedMessageCount : maxCount;

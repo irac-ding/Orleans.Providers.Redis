@@ -10,6 +10,7 @@ namespace Orleans.Configuration
         /// Timeout period for Redis operations.
         /// </summary>
         public TimeSpan OperationTimeout { get; set; } = TimeSpan.FromSeconds(15);
+
         /// <summary>
         /// How many messages will be queued up before new messages
         /// are dropped on the floor. This queue is normally emptied during

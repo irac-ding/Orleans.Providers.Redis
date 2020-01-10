@@ -85,7 +85,9 @@ namespace Orleans.Providers.Streams.Redis
         }
 
         public Task<IStreamFailureHandler> GetDeliveryFailureHandler(QueueId queueId) => StreamFailureHandlerFactory(queueId);
+
         public IQueueAdapterCache GetQueueAdapterCache() => _adapterCache;
+
         public IStreamQueueMapper GetStreamQueueMapper() => _streamQueueMapper;
 
         public static RedisQueueAdapterFactory Create(IServiceProvider services, string name)
