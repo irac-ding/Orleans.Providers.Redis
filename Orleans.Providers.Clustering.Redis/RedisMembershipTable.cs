@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
@@ -133,6 +134,15 @@ namespace Orleans.Providers.Clustering.Redis
         //     Delete all dead silo entries older than beforeDate
         public async Task CleanupDefunctSiloEntries(DateTimeOffset beforeDate)
         {
+            List<HashEntry> hashEntrys = _db.HashGetAll(ClusterKey).ToList();
+            foreach (var item in hashEntrys)
+            {
+                VersionedEntry entry = Deserialize<VersionedEntry>(item.Value);
+                if (entry.Entry.Status == SiloStatus.Dead && entry.Entry.IAmAliveTime < beforeDate)
+                {
+                    await _db.HashDeleteAsync(ClusterKey, item.Name);
+                }
+            }
             await Task.CompletedTask;
         }
     }
