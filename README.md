@@ -1,1 +1,1 @@
-"# Orleans.Providers.Redis" 
+Orleans.Providers.Redis
