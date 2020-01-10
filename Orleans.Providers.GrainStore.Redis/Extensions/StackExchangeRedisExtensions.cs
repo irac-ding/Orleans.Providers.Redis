@@ -7,6 +7,7 @@ namespace Orleans.Providers.GrainStore.Redis.Extensions
     internal static class StackExchangeRedisExtension
     {
         #region String helpers
+
         public static T GetObject<T>(this IDatabase redisClient, ISerializationManager serializationManager, string objectId)
         {
             var value = redisClient.StringGet(CreateUrn<T>(objectId));
@@ -63,7 +64,7 @@ namespace Orleans.Providers.GrainStore.Redis.Extensions
             redisClient.KeyDelete(CreateUrn(objectId, type));
         }
 
-        #endregion
+        #endregion String helpers
 
         public static string CreateUrn<T>(string id)
         {

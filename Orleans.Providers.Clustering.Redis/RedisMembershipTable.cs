@@ -65,7 +65,6 @@ namespace Orleans.Providers.Clustering.Redis
 
         private RedisKey ClusterKey => $"{_clusterOptions.ClusterId}";
 
-
         public async Task<MembershipTableData> ReadAll()
         {
             Logger?.Debug(nameof(ReadAll));
@@ -128,6 +127,7 @@ namespace Orleans.Providers.Clustering.Redis
             await _db.HashSetAsync(ClusterKey, entry.SiloAddress.ToString(), Serialize(new VersionedEntry(entry, tableVersion) { ResourceVersion = etag }));
             return true;
         }
+
         //
         // Summary:
         //     Delete all dead silo entries older than beforeDate
@@ -135,6 +135,5 @@ namespace Orleans.Providers.Clustering.Redis
         {
             await Task.CompletedTask;
         }
-
     }
 }

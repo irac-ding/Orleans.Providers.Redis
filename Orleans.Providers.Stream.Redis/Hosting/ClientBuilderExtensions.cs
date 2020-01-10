@@ -14,7 +14,7 @@ namespace Orleans.Hosting
         }
 
         /// <summary>
-        /// Configure cluster client to use redis queue persistent streams. 
+        /// Configure cluster client to use redis queue persistent streams.
         /// </summary>
         public static IClientBuilder AddRedisStreams(this IClientBuilder builder, string name, Action<ClusterClientRedisStreamConfigurator> configure)
         {

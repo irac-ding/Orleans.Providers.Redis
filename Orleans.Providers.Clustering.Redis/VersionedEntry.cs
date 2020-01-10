@@ -15,7 +15,6 @@ namespace Orleans.Providers.Clustering.Redis
 
         public VersionedEntry()
         {
-
         }
     }
 }

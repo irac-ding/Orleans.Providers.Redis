@@ -17,7 +17,9 @@ namespace Orleans.Providers.Common.Redis
         private readonly Dictionary<string, IConnectionMultiplexer> _connectionMultiplexers = new Dictionary<string, IConnectionMultiplexer>();
         internal Dictionary<string, IConnectionMultiplexer> TestHook_ConnectionMultiplexers => _connectionMultiplexers;
 
-        private CachedConnectionMultiplexerFactory() { }
+        private CachedConnectionMultiplexerFactory()
+        {
+        }
 
         public async Task<IConnectionMultiplexer> CreateAsync(string configuration)
         {

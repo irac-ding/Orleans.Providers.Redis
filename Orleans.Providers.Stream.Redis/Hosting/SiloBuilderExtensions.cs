@@ -6,7 +6,7 @@ namespace Orleans.Hosting
     public static class SiloBuilderExtensions
     {
         /// <summary>
-        /// Configure silo to use redis queue persistent streams. 
+        /// Configure silo to use redis queue persistent streams.
         /// </summary>
         public static ISiloHostBuilder AddRedisStreams(this ISiloHostBuilder builder, string name, Action<SiloRedisStreamConfigurator> configure)
         {

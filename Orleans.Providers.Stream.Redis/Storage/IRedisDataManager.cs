@@ -10,10 +10,15 @@ namespace Orleans.Streaming.Redis.Storage
         string QueueName { get; }
 
         Task AddQueueMessage(byte[] payload);
+
         Task DeleteQueueMessage(RedisValue value);
+
         Task<IEnumerable<RedisValue>> GetQueueMessagesAsync(int count);
+
         Task InitAsync(CancellationToken ct = default);
+
         Task SubscribeAsync(CancellationToken ct = default);
+
         Task UnsubscribeAsync(CancellationToken ct = default);
     }
 }

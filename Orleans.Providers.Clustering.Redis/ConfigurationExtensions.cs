@@ -65,5 +65,4 @@ namespace Orleans.Providers.Clustering.Redis
             return services;
         }
     }
-
 }

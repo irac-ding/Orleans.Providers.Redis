@@ -29,12 +29,13 @@ namespace Orleans.Providers.Clustering.Redis
             });
         }
 
-        class StoredSiloAddress
+        private class StoredSiloAddress
         {
             public int Generation
             {
                 get; set;
             }
+
             public IPEndPoint Endpoint { get; set; }
         }
     }

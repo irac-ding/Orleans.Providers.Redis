@@ -24,6 +24,7 @@ namespace Orleans.Storage
         private readonly ClusterOptions _clusterOptions;
         private readonly ILogger _logger;
         private readonly ISerializationManager _serializationManager;
+
         private readonly JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings
         {
             // Since order is not guaranteed during serialization force dictionary to be sorted then write json.
@@ -82,7 +83,6 @@ namespace Orleans.Storage
         private async Task<object> ReadStateFromRedisAsync(string key, Type type)
         {
             return await Task.Run(() => _redisClient.GetObject(_serializationManager, key, type));
-
         }
 
         public async Task WriteStateAsync(string grainType, GrainReference grainReference, IGrainState grainState)

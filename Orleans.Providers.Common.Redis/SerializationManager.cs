@@ -7,7 +7,9 @@ namespace Orleans.Providers.Common.Redis
     public interface ISerializationManager
     {
         byte[] SerializeToByteArray(object raw);
+
         T DeserializeFromByteArray<T>(byte[] data);
+
         object DeserializeFromByteArray(Type type, byte[] data);
     }
 
